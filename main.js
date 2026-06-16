@@ -92,16 +92,24 @@ if (deposito = parseInt(prompt("escolha a conta ")) ) {
     break;
 }
 
-if (contaSaque = parseInt(prompt("escolha a conta ")) ) {
-prompt("escolha a conta:");
+if (contaSaque = parseInt(prompt("escolha a conta "))) {
+  let valorsaque = parseFloat(prompt("valor do saque: "));
 
-let valorsaque =parseFloat(prompt("valor do saque: "));
-
-if (isNaN(contaSaque) || contas[contaSaque] ) { 
+  if (isNaN(contaSaque) || !contas[contaSaque]) {
     console.log("Conta de saque inválida.");
     break;
-}} 
-if (contas[contaSaque] && contas[contaSaque].sacar(valorsaque)) {
-    console.log("Saque realizado com sucesso.");
-}  
+  }
+
+  if (isNaN(valorsaque) || valorsaque <= 0) {
+    console.log("Valor de saque inválido.");
+    break;
+  }
+
+  if (contas[contaSaque].sacar(valorsaque)) {
+    console.log("Saque realizado.");
+  } else {
+    console.log("Saldo insuficiente ou valor inválido.");
+  }
+} 
+
 
