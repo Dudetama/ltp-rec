@@ -71,4 +71,37 @@ switch (opcao) {
     console.log("Conta corrente criada");
     break;
 
+
+
 if (mostrarContas()) break;
+
+if (deposito = parseInt(prompt("escolha a conta ")) ) {
+    let valorDeposito = parseFloat(prompt("valor do deposito: "));
+    if (isNaN(valorDeposito) || valorDeposito <= 0) {
+        console.log("Valor ou conta de depósito inválido.");
+        break;
+    }
+
+    if (contas[deposito]) {
+        contas[deposito].depositar(valorDeposito);
+        console.log("Depósito realizado com sucesso.");
+    } else {
+        console.log("erro no deposito, verifique a conta.");
+        ;
+    }
+    break;
+}
+
+if (contaSaque = parseInt(prompt("escolha a conta ")) ) {
+prompt("escolha a conta:");
+
+let valorsaque =parseFloat(prompt("valor do saque: "));
+
+if (isNaN(contaSaque) || contas[contaSaque] ) { 
+    console.log("Conta de saque inválida.");
+    break;
+}} 
+if (contas[contaSaque] && contas[contaSaque].sacar(valorsaque)) {
+    console.log("Saque realizado com sucesso.");
+}  
+
