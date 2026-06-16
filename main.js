@@ -36,3 +36,39 @@ while (opcao !== "0") {
 `);}
 
 opcao = prompt("Escolha uma opção: ");
+
+switch (opcao) {
+    case "1!":
+
+    let nomePoupança = prompt("Digite o nome do titular da conta poupança: ");
+
+    let saldopoupança = parseFloat(prompt("saldo inicial: "));
+
+    if (isNaN(saldopoupança)) {
+        console.log ("saldo invalido")}
+    break};
+
+    contas.push(new ContaPoupanca(nomePoupança, saldopoupança));
+
+    console.log("Conta poupança criada");
+    break;
+
+    
+
+    let nomeCorrente = prompt(" titular da conta: ");
+
+    let saldoCorrente = parseFloat(prompt("saldo inicial: "));
+
+    let limite = parseFloat(prompt("limite: ")); 
+
+    if (isNaN(saldoCorrente) || 
+    isNaN(limite)) {
+        console.log ("saldo ou limite invalido")}
+        break;
+
+    contas.push(new ContaCorrente(nomeCorrente, saldoCorrente, limite));
+
+    console.log("Conta corrente criada");
+    break;
+
+if (mostrarContas()) break;
