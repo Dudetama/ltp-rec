@@ -92,24 +92,96 @@ if (deposito = parseInt(prompt("escolha a conta ")) ) {
     break;
 }
 
-if (contaSaque = parseInt(prompt("escolha a conta "))) {
-  let valorsaque = parseFloat(prompt("valor do saque: "));
+if (contaSaque = parseInt(prompt("escolha a conta ")) ) {
+prompt("escolha a conta:");
 
   if (isNaN(contaSaque) || !contas[contaSaque]) {
     console.log("Conta de saque inválida.");
     break;
-  }
-
-  if (isNaN(valorsaque) || valorsaque <= 0) {
-    console.log("Valor de saque inválido.");
-    break;
-  }
-
-  if (contas[contaSaque].sacar(valorsaque)) {
+}} 
+if (contas[contaSaque] && contas[contaSaque].sacar(valorsaque)) {
     console.log("Saque realizado.");
-  } else {
-    console.log("Saldo insuficiente ou valor inválido.");
-  }
+    else {
+        console.log("Saldo insuficiente ou valor invalido.");
+break;
+    }
 } 
 
 
+if (mostrarContas()) break;
+
+let origem = parseInt(prompt("conta origem: "));
+
+let destino = parseInt(prompt("conta destino: "));
+
+let valorTransferencia = parseFloat(prompt("valor da transferência: "));
+
+if (isNaN(origem) || isNaN(destino)
+     || isNaN(valorTransferencia) 
+    || valorTransferencia <= 0) {
+    console.log("conta inválida.");
+    break;
+} 
+if ( contas[origem]
+    .transferir(valorTransferencia, contas[destino]) ) {
+    console.log("Transferência realizada.");
+} else {
+    console.log("erro na transferência.");
+}
+break;
+
+if (contas.length == 0) {
+    console.log("Nenhuma conta criada.");
+    break;
+ console.log("EXTRATO");
+for (let conta of contas) {
+    console.log(conta.containfo);
+
+}
+break;
+
+if (mostrarContas()) break;
+
+if (
+        isNaN(contaJuros) ||
+        !contas[contaJuros]
+      ) {
+        console.log("Conta inválida.");
+        break;
+      }
+
+      if (
+        contas[contaJuros]
+        instanceof ContaPoupanca
+      ) {
+
+        let juros =
+          contas[
+            contaJuros
+          ].renderJuros();
+
+        console.log(
+          "Juros aplicados': R$ ${juros.toFixed(2)}"
+        );
+
+      } else {
+
+        console.log(
+          "Essa conta não é poupança."
+        );
+      }
+
+      break;
+
+
+      console.log(
+        "Programa encerrado."
+      );
+      break;
+
+
+    'default';
+      console.log(
+        "Opção inválida."
+      );
+  }
